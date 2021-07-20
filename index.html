@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Primordial Particle System</title>
+</head>
+
+<body>
+  <div class='canvasContainer'>
+    <canvas id="render" width="1300" height="800"></canvas>
+  </div>
+
+  <div class='controlContainer'>
+    <p>
+      <button onclick="start()">Start</button>
+      <button onclick="stop()">Stop</button>
+    </p>
+    <p>
+      Quantidade de partículas: <input type="text" id="maxParticles" size=2 value=550 /> |
+      Escala: <input type="text" id="scale" size=2 value=7 /> |
+      Intervalo entre iterações: <input type="text" id="time" size=2 value=10 /> |
+      <button onclick="reset()">Set</button>
+    </p>
+  </div>
+  <script src="./script/essentials.js"></script>
+  <script src="./script/cell.js"></script>
+  <script src="./script/view.js"></script>
+  <script src="./script/app.js"></script>
+</body>
+
+</html>
