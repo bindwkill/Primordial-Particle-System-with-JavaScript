@@ -1,5 +1,10 @@
-# En
-## Primordial Particle System with JavaScript
+# Primordial Particle System with JavaScript
+
+## preview
+
+https://bindwkill.github.io/Primordial-Particle-System-with-JavaScript/
+
+## En
 
 #### I just tried to implement the particle life system shown in this video:
 https://youtu.be/makaJpLvbow
@@ -46,7 +51,7 @@ Finally, when I replaced the chain of ifs in the guidance equation I felt that t
 ###### Conclusions
 Perhaps JavaScript is not the most suitable language for this type of application, but this challenge was a great learning experience. Also, as I'm still learning a language, maybe improvements to the code that I'm not aware of are possible.
 
-# Pt-br
+## Pt-br
 
 ## Sistema de Partículas Primordiais com JavaScript
 
