@@ -1,64 +1,7 @@
-# Primordial Particle System with JavaScript
-
-## preview
-
-https://bindwkill.github.io/Primordial-Particle-System-with-JavaScript/
-
-## En
-
-#### I just tried to implement the particle life system shown in this video:
-https://youtu.be/makaJpLvbow
-
-Special Thanks to Thomas Schmickl and Martin Stefanec
-
-###### Motivation
-As said, I saw the video of this work on YouTube's suggestions and I thought it would be an interesting challenge to try to replicate this system using JavaScript language, which I am somewhat familiar with and which I am currently studying.
-
-###### Goals
-I didn't read the article, so I didn't make any inferences about the results, my only objective was to replicate as a mechanist in a language that, a priori, is not the most recommended for this type of application.
-
-###### Implementation
-The first time I saw an explanation I thought it wouldn't be such a difficult challenge, but the rules for iteration between particles were an especially tricky challenge.
-
-It wasn't clear to me consulting the repository of the original work how these rules were implemented, besides being in a programming language that I couldn't recognize.
-
-In theory the rules are 'simple':
-* Each particle has an (x, y) position and a Φ direction
-* Particles move at a constant velocity v
-* Particles rotate at a fixed angle each iteration
-* For α> 0, it turns right, otherwise left
-* Particles react to other particles within a radius r away from them
-* They rotate sideways with more neighboring particles
-* The final variation of orientation is given by the equation:
-ΔΦ / Δt = α + β * Nt * sign (Rt - Lt)
-Where:
-* sign() is a function that returns 1, -1 or zero
-* Rt, Lt and Nt are, respectively, right and left neighbor particles and total neighbors
-
-###### Difficulties
-In practice, the hardest part was distinguishing what is 'left' and 'right' for the particle. Since each iteration is headed in a different direction, you can't simply compare as positions to see which side each neighbor is on.
-
-To get around the problem (and again, I didn't read the article, this could have saved me a lot of time) I used the particle orientation to 'create' a line so I could tell if the neighbor in question is 'above' or below of this straight line.
-
-To distinguish whether this 'being above' means being to the right or left, I used the cosine of the orientation. Returning a negative value would mean that the particle is pointed to the left of the screen, and hence how neighbors above the line are to its right, and vice versa. Something didn't go as expected and this logic worked in reverse. As I didn't find out the reason, I just accepted.
-
-It also took me quite a while to realize that angles in JavaScript study to be worked in radians. I even created conversion functions, but I ended up convincing myself that it was better to convert everything to radian and work with the numbers that way.
-
-A constant since the beginning of the project and that I couldn't distinguish how far it is the fault of the lineage and where it is the fault of the code is the 'lag'. Above 700 particles an application is already noticeably slow and code changes in order to decrease the number of steps in each iteration did not have much effect. I have the suspicion that nesting two 'forEach()' can be partly to blame, but I was unsuccessful in adapting the 'for' loop to the logic I had already built
-
-Finally, when I replaced the chain of ifs in the guidance equation I felt that the behavior was less faithful to the original system, but that may just be my impression. Anyway, I left the commented piece in the code.
-
-###### Conclusions
-Perhaps JavaScript is not the most suitable language for this type of application, but this challenge was a great learning experience. Also, as I'm still learning a language, maybe improvements to the code that I'm not aware of are possible.
-
-## Pt-br
-
 ## Sistema de Partículas Primordiais com JavaScript
 
 #### Eu apenas tentei implementar o sistema de vida de partículas mostrado neste vídeo:
-https://youtu.be/makaJpLvbow
-
-Agradecimentos especiais a Thomas Schmickl e Martin Stefanec
+https://youtu.be/makaJpLvbow (Thomas Schmickl e Martin Stefanec)
 
 ###### Motivação
 Como dito, vi nas sugestões do YouTube o vídeo deste trabalho e achei que seria um desafio interessante tentar replicar esse sistema usando a linguagem JavaScript, que tenho certa familiaridade e que atualmente estou estudando.
